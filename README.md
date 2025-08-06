@@ -1,7 +1,3 @@
-![ICON](icon/ico.ico)
-
----
-
 # UNLOCKER
 
 ### Introduction
