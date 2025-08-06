@@ -1,4 +1,4 @@
-![icon/ico.ico]
+![icon\ico.ico]
 
 ---
 
