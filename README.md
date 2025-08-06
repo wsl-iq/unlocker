@@ -1,3 +1,9 @@
+![icon/ico.ico]
+
+---
+
+# UNLOCKER
+
 ### Introduction
 
 **Unlocker GUI** is a lightweight, administrator-level utility built using `Python` and `PyQt5`, tailored for users who need fast and safe file and task management.
@@ -43,4 +49,21 @@ All operations require **Administrator rights**, and the tool will automatically
 This tool runs completely **offline**  
 → No cloud APIs, No data collection, No background services.
 
+---
+
+### installation
+```
+pip install -r requirements.txt
+```
+---
+### **Run**
+```
+switch.bat
+```
+---
+
+### Mod ShortCut
+```
+shortcut.cmd
+```
 ---
