@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlocker GUI - Documentation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f2f4f8, #e0e7ff);
+      color: #333;
+      padding: 20px;
+      transition: direction 0.3s ease;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3 {
+      color: #1a237e;
+    }
+
+    .lang-toggle {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .lang-toggle button {
+      padding: 6px 12px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #3949ab;
+      color: white;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    .rtl {
+      direction: rtl;
+      text-align: right;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="doc">
+    <div class="lang-toggle">
+      <button onclick="toggleLang()" id="toggleBtn">العربية</button>
+    </div>
+
+    <div class="section" id="intro">
+      <h1>Unlocker GUI - File & Task Manager</h1>
+      <p>
+        Unlocker GUI is a simple desktop tool for managing files and tasks with administrator rights.
+        It supports operations like deleting, renaming, moving files, or killing processes with a modern dual-language interface.
+      </p>
+    </div>
+
+    <div class="section" id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Runs with Administrator privileges</li>
+        <li>Supports Arabic and English UI</li>
+        <li>Operations: Kill Process, Delete, Rename, Move File</li>
+        <li>Settings and logs saved in JSON</li>
+        <li>Polished user interface with icons</li>
+      </ul>
+    </div>
+
+    <div class="section" id="structure">
+      <h2>Project Structure</h2>
+      <pre>
+unlocker/
+├── unlocker.exe
+├── settings.json
+├── log.txt
+└── icon/
+    ├── ico.ico
+    ├── icon.ico
+    └── Adminisrtator.ico
+      </pre>
+    </div>
+
+    <div class="section" id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>This application does not collect any personal data. All operations are done locally on your device.</p>
+    </div>
+
+    <div class="section" id="license">
+      <h2>License</h2>
+      <p>This tool is free for personal use. Redistribution or resale is strictly prohibited without permission.</p>
+    </div>
+
+    <div class="section" id="about">
+      <h2>About Developer</h2>
+      <p>Developed by Mohammed Al-Baqer 2025.</p>
+    </div>
+  </div>
+  
+
+  <script>
+    const translations = {
+      ar: {
+        intro: `
+          <h1>Unlocker GUI - أداة إدارة الملفات والمهام</h1>
+          <p>
+            أداة سطح مكتب بسيطة لإدارة الملفات والعمليات بصلاحيات المسؤول.
+            تدعم حذف، إعادة تسمية، نقل الملفات أو إنهاء المهام من خلال واجهة مزدوجة اللغة.
+          </p>
+        `,
+        features: `
+          <h2>الميزات</h2>
+          <ul>
+            <li>تشغيل بصلاحيات المسؤول</li>
+            <li>دعم واجهة عربية وإنجليزية</li>
+            <li>عمليات: إنهاء مهمة، حذف، إعادة تسمية، نقل</li>
+            <li>حفظ الإعدادات والسجل بصيغة JSON</li>
+            <li>واجهة مصقولة مع أيقونات</li>
+          </ul>
+        `,
+        structure: `
+          <h2>هيكل المشروع</h2>
+          <pre>
+unlocker/
+├── unlocker.exe
+├── settings.json
+├── log.txt
+└── icon/
+    ├── ico.ico
+    ├── icon.ico
+    └── Adminisrtator.ico
+          </pre>
+        `,
+        privacy: `
+          <h2>سياسة الخصوصية</h2>
+          <p>هذا التطبيق لا يجمع أي بيانات شخصية. جميع العمليات تتم محلياً على جهازك.</p>
+        `,
+        license: `
+          <h2>الترخيص</h2>
+          <p>الأداة مجانية للاستخدام الشخصي. يمنع إعادة بيعها أو توزيعها بدون إذن.</p>
+        `,
+        about: `
+          <h2>حول المطور</h2>
+          <p>تطوير: محمد الباقر 2025.</p>
+        `,
+        toggleBtn: "English"
+      },
+      en: {
+        intro: document.getElementById("intro").innerHTML,
+        features: document.getElementById("features").innerHTML,
+        structure: document.getElementById("structure").innerHTML,
+        privacy: document.getElementById("privacy").innerHTML,
+        license: document.getElementById("license").innerHTML,
+        about: document.getElementById("about").innerHTML,
+        toggleBtn: "العربية"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      const t = translations[currentLang];
+      document.getElementById("intro").innerHTML = t.intro;
+      document.getElementById("features").innerHTML = t.features;
+      document.getElementById("structure").innerHTML = t.structure;
+      document.getElementById("privacy").innerHTML = t.privacy;
+      document.getElementById("license").innerHTML = t.license;
+      document.getElementById("about").innerHTML = t.about;
+      document.getElementById("toggleBtn").innerText = t.toggleBtn;
+
+      document.body.classList.toggle("rtl", currentLang === 'ar');
+    }
+  </script>
+</body>
+</html>
