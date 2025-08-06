@@ -44,8 +44,3 @@ This tool runs completely **offline**
 → No cloud APIs, No data collection, No background services.
 
 ---
-
-> ''Built with passion, designed for control.''
-
-
----
